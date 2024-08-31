@@ -22,7 +22,7 @@ pipeline {
 	}
 	post{
 		always{
-			echo "I always run"
+			echo "I always run, I'm awesome."
 		}
 		success{
 			echo "I run when you are successfull"
