@@ -1,11 +1,36 @@
 node {
-	stage('Build') {
-		echo "Build"
+	agent any
+	
+	stages{
+
+		stage('Build') {
+			steps{
+				echo "Build"
+			}
+		}
+		stage('Test') {
+			steps{
+				echo "Test"
+			}
+		}
+		stage('Integration Test') {
+			steps{
+				echo "Integration Test"
+			}
+		}
+
 	}
-	stage('Test') {
-		echo "Test"
+	post{
+		always{
+			echo "I always run"
+		}
+		success{
+			echo "I run when you are successfull"
+		}
+		failure{
+			echo "I run when you fail"
+		}
 	}
-	stage('Integration Test') {
-		echo "Integration Test"
-	}
+
+	
 }
